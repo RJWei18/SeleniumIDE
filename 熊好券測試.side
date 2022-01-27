@@ -1639,6 +1639,92 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "fca01ddc-29b7-46dc-9536-86ed53356c89",
+    "name": "case 11 測試",
+    "commands": [{
+      "id": "990a6932-14ea-4f53-8188-9e9ce4c5f4ff",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c4d02ff-7687-4cc5-b1aa-0a7788141370",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x981",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "180e3f43-731d-462a-a19b-f09363093f54",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='0']/a/div",
+      "targets": [
+        ["xpath=//div[@id='0']/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c717a5e2-e06d-4fb8-934a-f98c90abc20d",
+      "comment": "",
+      "command": "times",
+      "target": "10",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bdad0e3-d084-44b6-8a85-1303771648ee",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='__layout']/div/div[2]/div/div[5]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'篩選類別')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d4866aa-d57a-4ca0-a270-2be4ec5e04e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\__BVID__31 .search_modal_rule_btn:nth-child(3) > .btn",
+      "targets": [
+        ["css=#\\__BVID__31 .search_modal_rule_btn:nth-child(3) > .btn", "css:finder"],
+        ["xpath=//fieldset[@id='__BVID__31']/div/div[3]/label", "xpath:idRelative"],
+        ["xpath=//div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'藝文')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54ccf1e8-5639-468c-92f8-b5024de0de68",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\__BVID__38 .search_modal_rule_btn:nth-child(3) > .btn",
+      "targets": [
+        ["css=#\\__BVID__38 .search_modal_rule_btn:nth-child(3) > .btn", "css:finder"],
+        ["xpath=//fieldset[@id='__BVID__38']/div/div[3]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/fieldset/div/div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'信義區')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e35da856-c51b-4914-8ed1-7b31fc3186b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.close_btn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26e1f99b-59cb-4d65-8e49-a5ff9f4692c3",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "8cc5879a-97db-4160-be1b-c6ab40806c2e",
