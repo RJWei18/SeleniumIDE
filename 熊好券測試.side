@@ -1469,7 +1469,7 @@
       "id": "643b8c4f-0f37-41ac-aaac-e4ed2edee54a",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1920x981",
+      "target": "1080x720",
       "targets": [],
       "value": ""
     }, {
@@ -1513,7 +1513,7 @@
     }, {
       "id": "f8a00cac-25e8-4f7a-afcb-51469e2dfcc6",
       "comment": "",
-      "command": "times",
+      "command": "//times",
       "target": "5",
       "targets": [],
       "value": ""
@@ -1620,108 +1620,82 @@
     }, {
       "id": "8082ba2e-5921-4142-aeef-cad4bf2a70d5",
       "comment": "",
-      "command": "select",
+      "command": "//select",
       "target": "id=__BVID__24",
       "targets": [],
       "value": "value=60"
     }, {
       "id": "898563e7-e607-4cc3-b7a9-986dfc2aa376",
       "comment": "",
-      "command": "end",
+      "command": "//end",
       "target": "",
       "targets": [],
       "value": ""
     }, {
       "id": "b0db057f-99ba-4cb5-93bc-f97be2f1c7f0",
       "comment": "",
-      "command": "click",
-      "target": "",
+      "command": "run",
+      "target": "case 11 store count",
       "targets": [],
       "value": ""
     }]
   }, {
     "id": "fca01ddc-29b7-46dc-9536-86ed53356c89",
-    "name": "case 11 測試",
+    "name": "case 11 store count",
     "commands": [{
-      "id": "990a6932-14ea-4f53-8188-9e9ce4c5f4ff",
+      "id": "cde1e139-7a0d-49ee-9cce-d8139169aace",
       "comment": "",
-      "command": "open",
-      "target": "/",
+      "command": "echo",
+      "target": "取得搜尋總數",
       "targets": [],
-      "value": ""
-    }, {
-      "id": "5c4d02ff-7687-4cc5-b1aa-0a7788141370",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1920x981",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "180e3f43-731d-462a-a19b-f09363093f54",
-      "comment": "",
-      "command": "click",
-      "target": "xpath=//div[@id='0']/a/div",
-      "targets": [
-        ["xpath=//div[@id='0']/a/div", "xpath:idRelative"],
-        ["xpath=//a/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c717a5e2-e06d-4fb8-934a-f98c90abc20d",
-      "comment": "",
-      "command": "times",
-      "target": "10",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8bdad0e3-d084-44b6-8a85-1303771648ee",
-      "comment": "",
-      "command": "click",
-      "target": "css=.btn",
-      "targets": [
-        ["css=.btn", "css:finder"],
-        ["xpath=//button[@type='button']", "xpath:attributes"],
-        ["xpath=//div[@id='__layout']/div/div[2]/div/div[5]/div/div/div/button", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div/button", "xpath:position"],
-        ["xpath=//button[contains(.,'篩選類別')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "4d4866aa-d57a-4ca0-a270-2be4ec5e04e9",
-      "comment": "",
-      "command": "click",
-      "target": "css=#\\__BVID__31 .search_modal_rule_btn:nth-child(3) > .btn",
-      "targets": [
-        ["css=#\\__BVID__31 .search_modal_rule_btn:nth-child(3) > .btn", "css:finder"],
-        ["xpath=//fieldset[@id='__BVID__31']/div/div[3]/label", "xpath:idRelative"],
-        ["xpath=//div[3]/label", "xpath:position"],
-        ["xpath=//label[contains(.,'藝文')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "54ccf1e8-5639-468c-92f8-b5024de0de68",
-      "comment": "",
-      "command": "click",
-      "target": "css=#\\__BVID__38 .search_modal_rule_btn:nth-child(3) > .btn",
-      "targets": [
-        ["css=#\\__BVID__38 .search_modal_rule_btn:nth-child(3) > .btn", "css:finder"],
-        ["xpath=//fieldset[@id='__BVID__38']/div/div[3]/label", "xpath:idRelative"],
-        ["xpath=//div[2]/div[2]/fieldset/div/div[3]/label", "xpath:position"],
-        ["xpath=//label[contains(.,'信義區')]", "xpath:innerText"]
-      ],
       "value": ""
     }, {
       "id": "e35da856-c51b-4914-8ed1-7b31fc3186b6",
       "comment": "",
       "command": "click",
-      "target": "css=.close_btn",
+      "target": "css=.shop_num",
       "targets": [],
       "value": ""
     }, {
-      "id": "26e1f99b-59cb-4d65-8e49-a5ff9f4692c3",
+      "id": "7973eae0-d6ee-45f2-8062-d410876e2d1a",
       "comment": "",
-      "command": "end",
-      "target": "",
+      "command": "storeText",
+      "target": "css=.shop_num",
+      "targets": [],
+      "value": "shopNum"
+    }, {
+      "id": "60ab4d3d-a592-44f8-b773-c9ac5e29ea48",
+      "comment": "",
+      "command": "echo",
+      "target": "${shopNum}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0987b67a-9596-428e-b225-e506350eff53",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${shopNum}.indexOf(\"個\")",
+      "targets": [],
+      "value": "shopIndex"
+    }, {
+      "id": "95bd2bf1-adcb-47cc-9e55-800e2afa2657",
+      "comment": "",
+      "command": "echo",
+      "target": "${shopIndex}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ad8f84d-1d5a-47e7-8ef3-92f43c543aa9",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${shopNum}.substring(0,${shopIndex})",
+      "targets": [],
+      "value": "TotalNum"
+    }, {
+      "id": "f40a212b-3abe-4faf-94bb-1d6309cec2dc",
+      "comment": "",
+      "command": "echo",
+      "target": "${TotalNum}",
       "targets": [],
       "value": ""
     }]
