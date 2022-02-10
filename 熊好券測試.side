@@ -1698,6 +1698,34 @@
       "target": "${TotalNum}",
       "targets": [],
       "value": ""
+    }, {
+      "id": "5a8f39ca-4ead-4b6d-b762-4e99b084fd23",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Math.ceil(${TotalNum}/60)",
+      "targets": [],
+      "value": "TotalPage"
+    }, {
+      "id": "e6f7734c-596d-460e-ae5d-a305e32c83c4",
+      "comment": "",
+      "command": "echo",
+      "target": "${TotalPage}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e33a1a19-ec39-4e8f-96a6-28bfcfe8ffd1",
+      "comment": "",
+      "command": "storeValue",
+      "target": "button@aria-setsize",
+      "targets": [],
+      "value": "A"
+    }, {
+      "id": "7bbbf807-09c9-453b-be95-889e82f697bc",
+      "comment": "",
+      "command": "echo",
+      "target": "${A}",
+      "targets": [],
+      "value": ""
     }]
   }],
   "suites": [{
