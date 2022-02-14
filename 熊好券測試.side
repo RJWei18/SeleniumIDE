@@ -1771,15 +1771,43 @@
     }, {
       "id": "bc2785f3-9761-49c3-b684-999b407da897",
       "comment": "",
-      "command": "close",
+      "command": "//close",
       "target": "",
       "targets": [],
       "value": ""
     }, {
+      "id": "6655e62f-ded9-4c33-9634-4e93adf18e1b",
+      "comment": "",
+      "command": "//storeXpathCount",
+      "target": "xpath=//select[@class='page-item']",
+      "targets": [],
+      "value": "pageCount"
+    }, {
+      "id": "f8e1daca-d084-439c-a3f5-1fd8200b134e",
+      "comment": "",
+      "command": "//storeXpathCount",
+      "target": "xpath=//li[@class='page-item']",
+      "targets": [],
+      "value": "pageCount"
+    }, {
+      "id": "eecc7acb-1eef-48c3-b88a-f33a863bfefc",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//*[@class='page-item']",
+      "targets": [],
+      "value": "pageCount1"
+    }, {
       "id": "2fffb763-fed6-46fd-9c7a-ba324b136ac6",
       "comment": "",
-      "command": "count",
-      "target": "xpath=//*[@class=”page-item\"]",
+      "command": "storeXpathCount",
+      "target": "xpath=//*[@class='page-item active']",
+      "targets": [],
+      "value": "pageCount2"
+    }, {
+      "id": "3afbc14b-5f09-46f5-bd9a-0a1cb42f7e49",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Number(${pageCount1})+Number(${pageCount2})",
       "targets": [],
       "value": "pageCount"
     }, {
