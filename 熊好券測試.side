@@ -1695,7 +1695,7 @@
       "id": "f40a212b-3abe-4faf-94bb-1d6309cec2dc",
       "comment": "",
       "command": "echo",
-      "target": "${TotalNum}",
+      "target": "店家總數為 ${TotalNum}",
       "targets": [],
       "value": ""
     }, {
@@ -1709,22 +1709,159 @@
       "id": "e6f7734c-596d-460e-ae5d-a305e32c83c4",
       "comment": "",
       "command": "echo",
-      "target": "${TotalPage}",
+      "target": "計算總頁數為 ${TotalPage}",
       "targets": [],
       "value": ""
     }, {
       "id": "e33a1a19-ec39-4e8f-96a6-28bfcfe8ffd1",
       "comment": "",
-      "command": "storeValue",
-      "target": "button@aria-setsize",
+      "command": "storeAttribute",
+      "target": "css=button.page-link@aria-setsize",
       "targets": [],
-      "value": "A"
+      "value": "LastPage"
     }, {
       "id": "7bbbf807-09c9-453b-be95-889e82f697bc",
       "comment": "",
       "command": "echo",
-      "target": "${A}",
+      "target": "系統計算總頁數為 ${LastPage}",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "58c87d40-1939-479d-bd3d-0da19f21f997",
+      "comment": "",
+      "command": "if",
+      "target": "${LastPage} == ${TotalPage}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ab4cd269-f64a-4a72-b3b9-73faa0e793f6",
+      "comment": "",
+      "command": "echo",
+      "target": "頁數比對正確",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f09f07a1-5f7a-4aa6-a61c-2a56297be1cd",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "213381fc-63e6-40d0-8e96-34a05067708f",
+      "comment": "",
+      "command": "echo",
+      "target": "頁數比對錯誤",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc2ed25e-9d29-49a8-90d1-48b0a1e6ff40",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ca51257-6397-4829-ab5e-67d1cbdc2fa6",
+      "comment": "",
+      "command": "//run",
+      "target": "case 12 type page",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bc2785f3-9761-49c3-b684-999b407da897",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2fffb763-fed6-46fd-9c7a-ba324b136ac6",
+      "comment": "",
+      "command": "count",
+      "target": "xpath=//*[@class=”page-item\"]",
+      "targets": [],
+      "value": "pageCount"
+    }, {
+      "id": "94763b0d-887b-4404-8676-f974ca599986",
+      "comment": "",
+      "command": "echo",
+      "target": "頁數計算有 ${pageCount} 頁",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "658b1c3f-244a-47ae-8b29-bcff0f53b65f",
+      "comment": "",
+      "command": "echo",
+      "target": "輸入前進到最末頁",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b086fcd4-11ca-439e-b758-4455c27bc6aa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination_filt > input",
+      "targets": [
+        ["css=.pagination_filt > input", "css:finder"],
+        ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='__layout']/div/div[2]/div/div[7]/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91bc75f0-376a-40f2-9c34-fa5ce1cc6ce9",
+      "comment": "",
+      "command": "type",
+      "target": "css=.pagination_filt > input",
+      "targets": [],
+      "value": "${LastPage}  \\n"
+    }]
+  }, {
+    "id": "23d80189-af3c-444a-ba2b-e70afc132041",
+    "name": "case 12 type page",
+    "commands": [{
+      "id": "8d3782d2-032d-4fab-9995-f0f43a8dc5fc",
+      "comment": "",
+      "command": "echo",
+      "target": "輸入前進到最末頁",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7c54fae-f0a8-4c49-ad34-a6ffd25bdb65",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination_filt > input",
+      "targets": [
+        ["css=.pagination_filt > input", "css:finder"],
+        ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='__layout']/div/div[2]/div/div[7]/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca7cc5c5-9ca7-4738-aed1-8b905a0957d5",
+      "comment": "",
+      "command": "echo",
+      "target": "${LastPage}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a504c407-8aba-472e-8ecd-8b9e1a2bce66",
+      "comment": "",
+      "command": "type",
+      "target": "css=.pagination_filt > input",
+      "targets": [],
+      "value": "${LastPage}  \\n"
+    }, {
+      "id": "5f6ae5cb-45e5-4d52-af06-f1952884840b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wrapper",
+      "targets": [
+        ["css=.wrapper", "css:finder"],
+        ["xpath=//div[@id='__layout']/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div", "xpath:position"]
+      ],
       "value": ""
     }]
   }],
