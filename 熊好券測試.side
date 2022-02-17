@@ -1843,53 +1843,121 @@
       "target": "css=.pagination_filt > input",
       "targets": [],
       "value": "${LastPage}  \\n"
+    }, {
+      "id": "134d7012-6618-474e-ba90-f25a39840c7a",
+      "comment": "",
+      "command": "run",
+      "target": "case 12 content check",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "23d80189-af3c-444a-ba2b-e70afc132041",
-    "name": "case 12 type page",
+    "name": "case 12 content check",
     "commands": [{
       "id": "8d3782d2-032d-4fab-9995-f0f43a8dc5fc",
       "comment": "",
       "command": "echo",
-      "target": "輸入前進到最末頁",
+      "target": "比對外層跟內層的店家資料",
       "targets": [],
       "value": ""
     }, {
-      "id": "b7c54fae-f0a8-4c49-ad34-a6ffd25bdb65",
+      "id": "3f73c0ab-d61c-42fa-b7e5-7200ceadf7ef",
       "comment": "",
       "command": "click",
-      "target": "css=.pagination_filt > input",
+      "target": "css=.col-6:nth-child(1) .card_text > div",
       "targets": [
-        ["css=.pagination_filt > input", "css:finder"],
-        ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
-        ["xpath=//div[@id='__layout']/div/div[2]/div/div[7]/div/input", "xpath:idRelative"],
-        ["xpath=//div[7]/div/input", "xpath:position"]
+        ["css=.col-6:nth-child(1) .card_text > div", "css:finder"],
+        ["xpath=//div[@id='__layout']/div/div[2]/div/div[6]/div/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/div/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "ca7cc5c5-9ca7-4738-aed1-8b905a0957d5",
+      "id": "66f0ca97-c7eb-43f6-8de0-c9222cc962d6",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.col-6:nth-child(1) .card_text > div",
+      "targets": [],
+      "value": "storeName"
+    }, {
+      "id": "11d7d17d-e8ab-4899-bc31-52a5cefdfbd6",
       "comment": "",
       "command": "echo",
-      "target": "${LastPage}",
+      "target": "列表的店家名稱是 ${storeName}",
       "targets": [],
       "value": ""
     }, {
-      "id": "a504c407-8aba-472e-8ecd-8b9e1a2bce66",
-      "comment": "",
-      "command": "type",
-      "target": "css=.pagination_filt > input",
-      "targets": [],
-      "value": "${LastPage}  \\n"
-    }, {
-      "id": "5f6ae5cb-45e5-4d52-af06-f1952884840b",
+      "id": "1c3cfe16-b334-4c36-a22d-ea74048d95ae",
       "comment": "",
       "command": "click",
-      "target": "css=.wrapper",
+      "target": "css=.col-6:nth-child(1) .card_btn",
       "targets": [
-        ["css=.wrapper", "css:finder"],
-        ["xpath=//div[@id='__layout']/div", "xpath:idRelative"],
-        ["xpath=//div[4]/div/div", "xpath:position"]
+        ["css=.col-6:nth-child(1) .card_btn", "css:finder"],
+        ["xpath=//div[@id='__layout']/div/div[2]/div/div[6]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'詳細內容')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "c4583a02-6ba7-446c-a565-5e9b0b9a8007",
+      "comment": "",
+      "command": "click",
+      "target": "css=h4:nth-child(2)",
+      "targets": [
+        ["css=h4:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='shop_modal___BV_modal_body_']/div[2]/div[2]/div/div/div[2]/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'雀爾喜旅館')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a765c42e-44e7-4b37-abc6-2a058c8539dd",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=h4:nth-child(2)",
+      "targets": [],
+      "value": "contentName"
+    }, {
+      "id": "34f899a0-ad7c-4e24-b574-271b1036b7d0",
+      "comment": "",
+      "command": "echo",
+      "target": "內層的店家名稱是 ${contentName}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07c49304-4b34-441d-96fa-06305df1c48f",
+      "comment": "",
+      "command": "if",
+      "target": "${contentName} == ${storeName}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ccfa4e4-0190-46df-ada1-1078ef3a3db5",
+      "comment": "",
+      "command": "echo",
+      "target": "內容相同",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d5b8d4a-eb0b-4514-9ae0-db919ce26f33",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b0f6f12-5947-47aa-9660-dc2716ca8c99",
+      "comment": "",
+      "command": "echo",
+      "target": "內容不相同",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a35c9a79-99ce-4e9a-bf76-ab1cb32619df",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }],
